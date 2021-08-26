@@ -1,5 +1,7 @@
 # Portfolio
-Welcome to my portfolio source code.
+Welcome to my portfolio, 
+
+source code is in the master branch.
 
 I'm using react and if you like anything,
 
