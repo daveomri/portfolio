@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
       width: '50vw',
     },
     [theme.breakpoints.down('xs')]: {
-      width: '100vw',
+      width: '100%',
     },
   },
   content: {
