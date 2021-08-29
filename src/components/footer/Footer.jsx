@@ -39,6 +39,25 @@ const useStyles = makeStyles(theme => ({
       justifyContent: 'center',
     },
   },
+  mission: {
+    [theme.breakpoints.up('xs')]: {
+      justifyContent: 'flex-start',
+    },
+    [theme.breakpoints.down('xs')]: {
+      justifyContent: 'center',
+    },
+  },
+  logo: {
+    justifyContent: 'center',
+  },
+  learn: {
+    [theme.breakpoints.up('xs')]: {
+      justifyContent: 'flex-end',
+    },
+    [theme.breakpoints.down('xs')]: {
+      justifyContent: 'center',
+    },
+  },
 }));
 
 const socialNetworks = [
@@ -77,17 +96,17 @@ const Header = () => {
     <div>
       <Grid container className={classes.root}>
         <Grid item xs={12} sm={4}>
-          <Grid container justifyContent="flex-start">
+          <Grid container className={classes.mission}>
             <Typography>My Mission</Typography>
           </Grid>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <Grid container justifyContent="center">
+          <Grid container className={classes.logo}>
             <Typography>Logo</Typography>
           </Grid>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <Grid container justifyContent="flex-end">
+          <Grid container className={classes.learn}>
             <Typography>Learn more</Typography>
           </Grid>
         </Grid>
