@@ -76,11 +76,20 @@ const Header = () => {
   return (
     <div>
       <Grid container className={classes.root}>
-        <Grid item xs={12}>
-          logo
+        <Grid item xs={12} sm={4}>
+          <Grid container justifyContent="flex-start">
+            <Typography>My Mission</Typography>
+          </Grid>
         </Grid>
-        <Grid item xs={12}>
-          some info
+        <Grid item xs={12} sm={4}>
+          <Grid container justifyContent="center">
+            <Typography>Logo</Typography>
+          </Grid>
+        </Grid>
+        <Grid item xs={12} sm={4}>
+          <Grid container justifyContent="flex-end">
+            <Typography>Learn more</Typography>
+          </Grid>
         </Grid>
       </Grid>
 
