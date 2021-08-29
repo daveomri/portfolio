@@ -7,9 +7,10 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 
 const useStyles = makeStyles(() => ({
-  content: {
+  content: {},
+  paper: {
     minHeight: '100vh',
-    backgroundColor: '#462f',
+    backgroundColor: '#F2F3F3',
   },
 }));
 
@@ -17,11 +18,13 @@ const App = () => {
   const classes = useStyles();
 
   return (
-    <Paper>
-      <Header classes={classes.header} />
-      <Box className={classes.content}>content</Box>
+    <div>
+      <Paper className={classes.paper}>
+        <Header classes={classes.header} />
+        <Box className={classes.content}>content</Box>
+      </Paper>
       <Footer classes={classes.footer} />
-    </Paper>
+    </div>
   );
 };
 

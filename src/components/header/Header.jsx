@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   AppBar,
@@ -20,6 +19,12 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 
 const useStyles = makeStyles(theme => ({
+  appBar: {
+    color: '#000',
+    backgroundColor: '#fff',
+    borderBottom: '1px solid #838789',
+    boxShadow: 'none',
+  },
   button: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
@@ -78,7 +83,7 @@ const Header = () => {
   );
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" className={classes.appBar}>
       <Toolbar>
         <Grid container alignItems="center">
           <Grid item xs={3} sm={2} md={1}>
