@@ -9,6 +9,8 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
+import logo from '../../resource/images/logo.gif';
+
 const useStyles = makeStyles(theme => ({
   root: {
     paddingLeft: theme.spacing(3),
@@ -49,6 +51,12 @@ const useStyles = makeStyles(theme => ({
   },
   logo: {
     justifyContent: 'center',
+    direction: 'column',
+    alignItems: 'center',
+  },
+  logoImage: {
+    width: '100px',
+    height: 'auto',
   },
   learn: {
     [theme.breakpoints.up('xs')]: {
@@ -102,7 +110,10 @@ const Header = () => {
         </Grid>
         <Grid item xs={12} sm={4}>
           <Grid container className={classes.logo}>
-            <Typography>Logo</Typography>
+            <img src={logo} alt="Logo" className={classes.logoImage} />
+
+            <Grid item xs={12} />
+            <Typography>this is text</Typography>
           </Grid>
         </Grid>
         <Grid item xs={12} sm={4}>
