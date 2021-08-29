@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { Paper, Box } from '@material-ui/core';
+
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 

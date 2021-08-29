@@ -96,7 +96,7 @@ const Header = () => {
 
   const openUrl = url => event => {
     event.preventDefault();
-    const win = window.open(url, '_blank');
+    const win = window.open(url);
     win.focus();
   };
 
