@@ -51,9 +51,6 @@ const Header = () => {
 
   const list = () => (
     <div
-      // className={clsx(classes.list, {
-      //   [classes.fullList]: anchor === 'top' || anchor === 'bottom',
-      // })}
       role="presentation"
       onClick={handleState(false)}
       onKeyDown={handleState(false)}
