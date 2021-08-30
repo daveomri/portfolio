@@ -57,6 +57,7 @@ const useStyles = makeStyles(theme => ({
   logoImage: {
     width: '100px',
     height: 'auto',
+    padding: theme.spacing(1),
   },
   learn: {
     [theme.breakpoints.up('xs')]: {
@@ -104,22 +105,17 @@ const Header = () => {
     <div>
       <Grid container className={classes.root}>
         <Grid item xs={12} sm={4}>
-          <Grid container className={classes.mission}>
-            <Typography>My Mission</Typography>
-          </Grid>
+          <Grid container className={classes.mission}></Grid>
         </Grid>
         <Grid item xs={12} sm={4}>
           <Grid container className={classes.logo}>
             <img src={logo} alt="Logo" className={classes.logoImage} />
 
             <Grid item xs={12} />
-            <Typography>this is text</Typography>
           </Grid>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <Grid container className={classes.learn}>
-            <Typography>Learn more</Typography>
-          </Grid>
+          <Grid container className={classes.learn}></Grid>
         </Grid>
       </Grid>
 
