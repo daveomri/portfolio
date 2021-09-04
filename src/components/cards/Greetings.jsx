@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 
 import profile from '../../resource/images/profile.png';
 
@@ -13,7 +13,7 @@ const useStyles = makeStyles(() => ({
   profilePic: {
     minWidth: '250px',
     width: '25vw',
-    borderRadius: '25vw',
+    borderRadius: '100vw',
     height: 'auto',
   },
 }));
@@ -28,14 +28,22 @@ const Greetings = () => {
         justifyContent="center"
         alignItems="center"
         className={classes.root}
-        spacing={7}
+        spacing={1}
       >
-        <Grid item xs={12} sm={12} md={5}>
-          <Grid container justifyContent="center" alignItems="center">
-            <img src={profile} alt="Logo" className={classes.profilePic} />
+        <Grid item xs={12}>
+          <Grid container>
+            <Grid item xs={12} sm={12} md={5}>
+              <Grid container justifyContent="center" alignItems="center">
+                <img src={profile} alt="Logo" className={classes.profilePic} />
+              </Grid>
+            </Grid>
+            <Grid item xs={12} sm={12} md={7}>
+              <Grid container justifyContent="center" alignItems="center">
+                <Typography variant="body1">text</Typography>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={12} sm={12} md={7}>text</Grid>
       </Grid>
     </Card>
   );

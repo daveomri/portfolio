@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 const Card = styled.section`
-    min-height: 100vh;
+    height: 100vh;
+    max-height: 1000px;
     display: grid;
-    padding-left: 10vw;
-    padding-right: 10vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
     background: papayawhip;
 `;
 
