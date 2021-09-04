@@ -1,27 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { Grid } from '@material-ui/core';
+
 import Card from './Card';
 
 const useStyles = makeStyles(theme => ({
-  appBar: {
-    color: '#000',
-    backgroundColor: '#fff',
-    borderBottom: '1px solid #838789',
-    boxShadow: 'none',
-  },
-  button: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-  },
-  drawer: {
-    width: 'auto',
-    padding: theme.spacing(2),
-  },
-  list: {
-    width: 250,
-  },
-  fullList: {
-    width: 'auto',
+  root: {
+    minHeight: '100%',
   },
 }));
 
@@ -30,7 +15,10 @@ const Greetings = () => {
 
   return (
     <Card>
-        Greetings page
+       <Grid container justifyContent="center" alignItems="center" className={classes.root}>
+            <Grid item xs={12} sm={4}>pic</Grid>
+            <Grid item xs={12} sm={8}>text</Grid>
+       </Grid>
     </Card>
   );
 };
