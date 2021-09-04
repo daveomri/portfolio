@@ -5,7 +5,7 @@ import { Paper, Box } from '@material-ui/core';
 
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
-import Card from './components/cards/Card';
+import Greetings from './components/cards/Greetings';
 
 const useStyles = makeStyles(() => ({
   content: {},
@@ -23,9 +23,7 @@ const App = () => {
       <Paper className={classes.paper}>
         <Header classes={classes.header} />
         <Box className={classes.content}>
-          <Card>
-            fist card
-          </Card>
+          <Greetings />
         </Box>
       </Paper>
       <Footer classes={classes.footer} />
