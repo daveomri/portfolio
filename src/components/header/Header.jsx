@@ -78,7 +78,7 @@ const Header = () => {
       <Divider />
       <List>
         {drawerItems.map((drawerItem) => (
-          <Link to={drawerItem.key} smooth>
+          <Link to={drawerItem.key} onClick={handleState(false)} smooth>
             <ListItem button key={drawerItem.key}>
               <ListItemIcon>
                 {drawerItem.icon}
