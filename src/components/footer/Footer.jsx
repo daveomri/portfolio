@@ -1,7 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-import PropTypes from 'prop-types';
 import { Grid, Typography, IconButton } from '@material-ui/core';
 
 import TwitterIcon from '@material-ui/icons/Twitter';
@@ -11,7 +10,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 
 import logo from '../../resource/images/logo.gif';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     paddingLeft: theme.spacing(3),
     paddingRight: theme.spacing(3),
@@ -95,7 +94,7 @@ const socialNetworks = [
 const Header = () => {
   const classes = useStyles();
 
-  const openUrl = url => event => {
+  const openUrl = (url) => (event) => {
     event.preventDefault();
     const win = window.open(url);
     win.focus();
@@ -105,7 +104,7 @@ const Header = () => {
     <div>
       <Grid container className={classes.root}>
         <Grid item xs={12} sm={4}>
-          <Grid container className={classes.mission}></Grid>
+          <Grid container className={classes.mission} />
         </Grid>
         <Grid item xs={12} sm={4}>
           <Grid container className={classes.logo}>
@@ -115,7 +114,7 @@ const Header = () => {
           </Grid>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <Grid container className={classes.learn}></Grid>
+          <Grid container className={classes.learn} />
         </Grid>
       </Grid>
 
@@ -132,18 +131,16 @@ const Header = () => {
         </Grid>
         <Grid item xs={12} sm={6}>
           <Grid container className={classes.social}>
-            {socialNetworks.map(socNet => {
-              return (
-                <IconButton
-                  key={socNet.name}
-                  className={classes.button}
-                  aria-label={socNet.name}
-                  onClick={openUrl(socNet.url)}
-                >
-                  {socNet.icon}
-                </IconButton>
-              );
-            })}
+            {socialNetworks.map((socNet) => (
+              <IconButton
+                key={socNet.name}
+                className={classes.button}
+                aria-label={socNet.name}
+                onClick={openUrl(socNet.url)}
+              >
+                {socNet.icon}
+              </IconButton>
+            ))}
           </Grid>
         </Grid>
       </Grid>
@@ -153,12 +150,8 @@ const Header = () => {
 
 Header.displayName = 'Header';
 
-Header.propTypes = {
-  classes: PropTypes.object,
-};
+Header.propTypes = {};
 
-Header.defaultProps = {
-  classes: {},
-};
+Header.defaultProps = {};
 
 export default Header;

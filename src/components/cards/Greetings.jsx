@@ -15,6 +15,7 @@ const useStyles = makeStyles(() => ({
     width: '20vw',
     borderRadius: '100vw',
     height: 'auto',
+    border: '1px solid black',
   },
 }));
 
@@ -38,7 +39,7 @@ const Greetings = () => {
             </Grid>
             <Grid item xs={12} sm={12} md={7}>
               <Grid container justifyContent="center" alignItems="center">
-                <Typography variant="body1">
+                <Typography variant="body1" className={classes.typeWriter}>
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                   Duis viverra diam non justo. Duis risus. Duis viverra diam
                   non justo. Praesent dapibus. Sed ac dolor sit amet purus

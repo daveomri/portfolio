@@ -18,7 +18,7 @@ import { Menu } from '@material-ui/icons';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   appBar: {
     color: '#000',
     backgroundColor: '#fff',
@@ -39,13 +39,16 @@ const useStyles = makeStyles(theme => ({
   fullList: {
     width: 'auto',
   },
+  title: {
+    fontFamily: 'GOGOIA-Regular',
+  },
 }));
 
 const Header = () => {
   const classes = useStyles();
   const [state, setState] = useState(false);
 
-  const handleState = newState => () => {
+  const handleState = (newState) => () => {
     setState(newState);
   };
 
@@ -84,7 +87,7 @@ const Header = () => {
       <Toolbar>
         <Grid container alignItems="center">
           <Grid item xs={3} sm={2} md={1}>
-            <Typography variant="h6" className={classes.title}>
+            <Typography variant="h5" className={classes.title}>
               Portfolio
             </Typography>
           </Grid>
