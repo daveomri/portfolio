@@ -87,7 +87,7 @@ const Header = () => {
   const classes = useStyles();
   const [state, setState] = useState(false);
 
-  let pathName = window.location.pathname.split('/').slice(-1).pop();
+  const pathName = window.location.pathname.split('/').slice(-1).pop();
   const pathKey = pathToKey[`/${pathName}`];
 
   const handleState = (newState) => () => {
