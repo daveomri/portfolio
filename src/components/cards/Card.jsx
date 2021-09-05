@@ -6,7 +6,6 @@ const Card = styled.section`
     display: grid;
     padding-left: 5vw;
     padding-right: 5vw;
-    background: papayawhip;
 `;
 
 Card.displayName = 'Card';

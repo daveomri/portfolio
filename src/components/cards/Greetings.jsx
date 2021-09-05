@@ -12,7 +12,7 @@ const useStyles = makeStyles(() => ({
   },
   profilePic: {
     minWidth: '250px',
-    width: '25vw',
+    width: '20vw',
     borderRadius: '100vw',
     height: 'auto',
   },
@@ -28,10 +28,9 @@ const Greetings = () => {
         justifyContent="center"
         alignItems="center"
         className={classes.root}
-        spacing={1}
       >
         <Grid item xs={12}>
-          <Grid container>
+          <Grid container spacing={2} alignItems="center">
             <Grid item xs={12} sm={12} md={5}>
               <Grid container justifyContent="center" alignItems="center">
                 <img src={profile} alt="Logo" className={classes.profilePic} />
@@ -39,7 +38,20 @@ const Greetings = () => {
             </Grid>
             <Grid item xs={12} sm={12} md={7}>
               <Grid container justifyContent="center" alignItems="center">
-                <Typography variant="body1">text</Typography>
+                <Typography variant="body1">
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                  Duis viverra diam non justo. Duis risus. Duis viverra diam
+                  non justo. Praesent dapibus. Sed ac dolor sit amet purus
+                  malesuada congue. Suspendisse nisl. Curabitur ligula sapien,
+                  pulvinar a vestibulum quis, facilisis vel sapien. In rutrum.
+                  Integer pellentesque quam vel velit. Aenean id metus id velit
+                  ullamcorper pulvinar. Integer lacinia. Vivamus ac leo pretium
+                  faucibus. Cras pede libero, dapibus nec, pretium sit amet, tempor
+                  quis. Nunc tincidunt ante vitae massa. Et harum quidem rerum
+                  facilis est et expedita distinctio. Nullam justo enim,
+                  consectetuer nec, ullamcorper ac, vestibulum in, elit.
+
+                </Typography>
               </Grid>
             </Grid>
           </Grid>
