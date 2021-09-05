@@ -8,10 +8,10 @@ import Card from './Card';
 
 const useStyles = makeStyles(() => ({
   root: {
-    minHeight: '100%',
+    minHeight: '100vh',
   },
   profilePic: {
-    minWidth: '250px',
+    minWidth: '200px',
     width: '20vw',
     borderRadius: '100vw',
     height: 'auto',
