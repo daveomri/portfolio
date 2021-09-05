@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Typography } from '@material-ui/core';
 
@@ -19,11 +20,11 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const Greetings = () => {
+const Greetings = (props) => {
   const classes = useStyles();
-
+  const { id } = props;
   return (
-    <Card>
+    <Card id={id}>
       <Grid
         container
         justifyContent="center"
@@ -51,7 +52,6 @@ const Greetings = () => {
                   quis. Nunc tincidunt ante vitae massa. Et harum quidem rerum
                   facilis est et expedita distinctio. Nullam justo enim,
                   consectetuer nec, ullamcorper ac, vestibulum in, elit.
-
                 </Typography>
               </Grid>
             </Grid>
@@ -61,5 +61,13 @@ const Greetings = () => {
     </Card>
   );
 };
+
+Greetings.displayName = 'Greetings';
+
+Greetings.propTypes = {
+  id: PropTypes.string.isRequired,
+};
+
+Greetings.defaultProps = {};
 
 export default Greetings;

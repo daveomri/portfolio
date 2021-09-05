@@ -23,7 +23,7 @@ const App = () => {
       <Paper className={classes.paper}>
         <Header classes={classes.header} />
         <Box className={classes.content}>
-          <Greetings />
+          <Greetings id="about_me" />
         </Box>
       </Paper>
       <Footer classes={classes.footer} />
