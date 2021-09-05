@@ -7,6 +7,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
 } from 'react-router-dom';
 
 import Header from './components/header/Header';
@@ -30,9 +31,9 @@ const App = () => {
       <Paper className={classes.paper}>
         <Header classes={classes.header} />
         <Switch>
-          <Route path="/portfolio/links" component={Links} />
-          <Route path="/portfolio" component={Portfolio} />
-          {/* <Route render={() => <Redirect to={{ pathname: '/' }} />} /> */}
+          <Route exact path="/portfolio/links" component={Links} />
+          <Route exact path="/portfolio" component={Portfolio} />
+          <Route render={() => <Redirect to={{ pathname: '/portfolio' }} />} />
         </Switch>
       </Paper>
       <Footer classes={classes.footer} />
