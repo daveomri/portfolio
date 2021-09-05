@@ -88,7 +88,7 @@ const Header = () => {
   const [state, setState] = useState(false);
 
   const pathName = window.location.pathname.split('/').slice(-1).pop();
-  const pathKey = pathToKey[`/${pathName}`];
+  const pathKey = pathToKey[`/${pathName}`] ? pathToKey[`/${pathName}`] : 'portfolio';
 
   const handleState = (newState) => () => {
     setState(newState);
@@ -142,7 +142,7 @@ const Header = () => {
         <Grid container alignItems="center">
           <Grid item xs={3} sm={2} md={1}>
             <Typography variant="h5" className={classes.title}>
-              {appComponents[pathKey].text}
+              {appComponents[pathKey] ? appComponents[pathKey].text : 'Error 404'}
             </Typography>
           </Grid>
           <Grid item xs={9} sm={10} md={11}>
