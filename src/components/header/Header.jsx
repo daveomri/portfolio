@@ -13,11 +13,15 @@ import {
   ListItemIcon,
   ListItemText,
 } from '@material-ui/core';
+import {
+  Link as AppLink,
+} from 'react-router-dom';
 import { Link } from 'react-scroll';
 import { Menu } from '@material-ui/icons';
 
 import LinkIcon from '@material-ui/icons/Link';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import PortraitSharpIcon from '@material-ui/icons/PortraitSharp';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -43,17 +47,47 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontFamily: 'GOGOIA-Deco',
   },
+  link: {
+    textDecoration: 'none',
+    color: '#000',
+  },
 }));
 
-const drawerItems = [{
-  key: 'about_me',
-  text: 'About me',
-  icon: <AccountCircleIcon />,
-}];
+const drawerKeys = ['portfolio', 'links'];
+
+const pathToKey = {
+  '/': 'portfolio',
+  '/links': 'links',
+};
+
+const appComponents = {
+  portfolio: {
+    key: 'portfolio',
+    text: 'Portfolio',
+    icon: <PortraitSharpIcon />,
+    path: '/',
+    items: [
+      {
+        key: 'about_me',
+        text: 'About me',
+        icon: <AccountCircleIcon />,
+      },
+    ],
+  },
+  links: {
+    key: 'links',
+    text: 'Links',
+    icon: <LinkIcon />,
+    path: '/links',
+    items: [],
+  },
+};
 
 const Header = () => {
   const classes = useStyles();
   const [state, setState] = useState(false);
+
+  const pathKey = pathToKey[window.location.pathname];
 
   const handleState = (newState) => () => {
     setState(newState);
@@ -66,28 +100,38 @@ const Header = () => {
       onKeyDown={handleState(false)}
     >
       <List>
-        {['Links'].map((text) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              <LinkIcon />
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
+        {drawerKeys.map((key) => (
+          <AppLink to={appComponents[key].path} className={classes.link} key={key}>
+            <ListItem button>
+              <ListItemIcon>
+                {appComponents[key].icon}
+              </ListItemIcon>
+              <ListItemText primary={appComponents[key].text} />
+            </ListItem>
+          </AppLink>
         ))}
       </List>
       <Divider />
-      <List>
-        {drawerItems.map((drawerItem) => (
-          <Link to={drawerItem.key} onClick={handleState(false)} smooth>
-            <ListItem button key={drawerItem.key}>
-              <ListItemIcon>
-                {drawerItem.icon}
-              </ListItemIcon>
-              <ListItemText primary={drawerItem.text} />
-            </ListItem>
-          </Link>
-        ))}
-      </List>
+      {appComponents[pathKey] && (
+        <List>
+          {appComponents[pathKey].items.map((drawerItem) => (
+            <Link
+              to={drawerItem.key}
+              onClick={handleState(false)}
+              smooth
+              className={classes.link}
+              key={drawerItem.key}
+            >
+              <ListItem button>
+                <ListItemIcon>
+                  {drawerItem.icon}
+                </ListItemIcon>
+                <ListItemText primary={drawerItem.text} />
+              </ListItem>
+            </Link>
+          ))}
+        </List>
+      )}
     </div>
   );
 
@@ -97,7 +141,7 @@ const Header = () => {
         <Grid container alignItems="center">
           <Grid item xs={3} sm={2} md={1}>
             <Typography variant="h5" className={classes.title}>
-              Portfolio
+              {appComponents[pathKey].text}
             </Typography>
           </Grid>
           <Grid item xs={9} sm={10} md={11}>

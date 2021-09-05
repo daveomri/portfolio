@@ -1,11 +1,19 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { Paper, Box } from '@material-ui/core';
+import { Paper } from '@material-ui/core';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 
 import Header from './components/header/Header';
+import Portfolio from './Portfolio';
+import Links from './Links';
 import Footer from './components/footer/Footer';
-import Greetings from './components/cards/Greetings';
 
 const useStyles = makeStyles(() => ({
   content: {},
@@ -19,15 +27,17 @@ const App = () => {
   const classes = useStyles();
 
   return (
-    <div>
+    <Router>
       <Paper className={classes.paper}>
         <Header classes={classes.header} />
-        <Box className={classes.content}>
-          <Greetings id="about_me" />
-        </Box>
+        <Switch>
+          <Route exact path="/" component={Portfolio} />
+          <Route path="/links" component={Links} />
+          <Route render={() => <Redirect to={{ pathname: '/' }} />} />
+        </Switch>
       </Paper>
       <Footer classes={classes.footer} />
-    </div>
+    </Router>
   );
 };
 
