@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     width: 'auto',
   },
   title: {
-    fontFamily: 'GOGOIA-Regular',
+    fontFamily: 'GOGOIA-Deco',
   },
 }));
 

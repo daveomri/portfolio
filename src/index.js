@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './resource/fonts/Gogoia/Gogoia/Commercial/TTF/GOGOIA-Regular.ttf';
+import './resource/fonts/Gogoia/Gogoia/Commercial/TTF/GOGOIA-Deco.ttf';
 
 ReactDOM.render(
   <React.StrictMode>

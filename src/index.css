@@ -11,7 +11,13 @@ body {
   font-family: "GOGOIA-Regular";
   src: local("GOGOIA-Regular"),
    url("./resource/fonts/Gogoia/Gogoia/Commercial/TTF/GOGOIA-Regular.ttf") format("truetype");
-  }
+}
+
+@font-face {
+  font-family: "GOGOIA-Deco";
+  src: local("GOGOIA-Deco"),
+   url("./resource/fonts/Gogoia/Gogoia/Commercial/TTF/GOGOIA-Deco.ttf") format("truetype");
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
