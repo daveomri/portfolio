@@ -65,7 +65,7 @@ const appComponents = {
     key: 'portfolio',
     text: 'Portfolio',
     icon: <PortraitSharpIcon />,
-    path: '/portfolio',
+    path: '/',
     items: [
       {
         key: 'about_me',
@@ -78,7 +78,7 @@ const appComponents = {
     key: 'links',
     text: 'Links',
     icon: <LinkIcon />,
-    path: '/portfolio/links',
+    path: '/links',
     items: [],
   },
 };

@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Paper } from '@material-ui/core';
 
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Switch,
   Route,
   Redirect,
@@ -27,17 +27,17 @@ const App = () => {
   const classes = useStyles();
 
   return (
-    <Router>
+    <HashRouter>
       <Paper className={classes.paper}>
         <Header classes={classes.header} />
         <Switch>
-          <Route exact path="/portfolio/links" component={Links} />
-          <Route exact path="/portfolio" component={Portfolio} />
-          <Route render={() => <Redirect to={{ pathname: '/portfolio' }} />} />
+          <Route exact path="/links" component={Links} />
+          <Route exact path="/" component={Portfolio} />
+          <Route render={() => <Redirect to={{ pathname: '/' }} />} />
         </Switch>
       </Paper>
       <Footer classes={classes.footer} />
-    </Router>
+    </HashRouter>
   );
 };
 
