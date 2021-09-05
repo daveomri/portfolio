@@ -30,8 +30,8 @@ const App = () => {
       <Paper className={classes.paper}>
         <Header classes={classes.header} />
         <Switch>
-          <Route path="/" component={Portfolio} />
-          <Route path="/links" component={Links} />
+          <Route path="/portfolio/links" component={Links} />
+          <Route path="/portfolio" component={Portfolio} />
           {/* <Route render={() => <Redirect to={{ pathname: '/' }} />} /> */}
         </Switch>
       </Paper>
