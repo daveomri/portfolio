@@ -13,12 +13,13 @@ import {
   ListItemIcon,
   ListItemText,
 } from '@material-ui/core';
+import { Link } from 'react-scroll';
 import { Menu } from '@material-ui/icons';
 
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import LinkIcon from '@material-ui/icons/Link';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   appBar: {
     color: '#000',
     backgroundColor: '#fff',
@@ -39,13 +40,22 @@ const useStyles = makeStyles(theme => ({
   fullList: {
     width: 'auto',
   },
+  title: {
+    fontFamily: 'GOGOIA-Regular',
+  },
 }));
+
+const drawerItems = [{
+  key: 'about_me',
+  text: 'About me',
+  icon: <AccountCircleIcon />,
+}];
 
 const Header = () => {
   const classes = useStyles();
   const [state, setState] = useState(false);
 
-  const handleState = newState => () => {
+  const handleState = (newState) => () => {
     setState(newState);
   };
 
@@ -56,10 +66,10 @@ const Header = () => {
       onKeyDown={handleState(false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+        {['Links'].map((text) => (
           <ListItem button key={text}>
             <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              <LinkIcon />
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
@@ -67,24 +77,26 @@ const Header = () => {
       </List>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
+        {drawerItems.map((drawerItem) => (
+          <Link to={drawerItem.key} smooth>
+            <ListItem button key={drawerItem.key}>
+              <ListItemIcon>
+                {drawerItem.icon}
+              </ListItemIcon>
+              <ListItemText primary={drawerItem.text} />
+            </ListItem>
+          </Link>
         ))}
       </List>
     </div>
   );
 
   return (
-    <AppBar position="static" className={classes.appBar}>
+    <AppBar position="fixed" className={classes.appBar}>
       <Toolbar>
         <Grid container alignItems="center">
           <Grid item xs={3} sm={2} md={1}>
-            <Typography variant="h6" className={classes.title}>
+            <Typography variant="h5" className={classes.title}>
               Portfolio
             </Typography>
           </Grid>

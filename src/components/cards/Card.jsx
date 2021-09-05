@@ -1,9 +1,13 @@
 import styled from 'styled-components';
-//import clsx from 'clsx';
 
 const Card = styled.section`
-    min-height: 100vh;
-    background: papayawhip;
+    minheight: 100vh;
+    max-height: 1000px;
+    display: grid;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 5vw;
+    padding-right: 5vw;
 `;
 
 Card.displayName = 'Card';
