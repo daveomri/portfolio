@@ -87,8 +87,8 @@ const Header = () => {
   const classes = useStyles();
   const [state, setState] = useState(false);
 
-  const pathName = window.location.pathname.split('/').slice(-1).pop();
-  const pathKey = pathToKey[`/${pathName}`] ? pathToKey[`/${pathName}`] : 'portfolio';
+  const pathName = window.location.hash.substring(1);
+  const pathKey = pathToKey[`${pathName}`] ? pathToKey[`${pathName}`] : 'portfolio';
 
   const handleState = (newState) => () => {
     setState(newState);
