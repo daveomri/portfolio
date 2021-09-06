@@ -109,7 +109,6 @@ const Header = () => {
         <Grid item xs={12} sm={4}>
           <Grid container className={classes.logo}>
             <img src={logo} alt="Logo" className={classes.logoImage} />
-
             <Grid item xs={12} />
           </Grid>
         </Grid>
@@ -126,7 +125,7 @@ const Header = () => {
       >
         <Grid item xs={12} sm={6}>
           <Grid container className={classes.copyright}>
-            <Typography variant="body2">© 2021 David Omrai</Typography>
+            <Typography variant="body2">© David Omrai</Typography>
           </Grid>
         </Grid>
         <Grid item xs={12} sm={6}>
