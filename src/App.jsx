@@ -3,12 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { Paper } from '@material-ui/core';
 
-import {
-  HashRouter,
-  Switch,
-  Route,
-  Redirect,
-} from 'react-router-dom';
+import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import Header from './components/header/Header';
 import Portfolio from './Portfolio';
