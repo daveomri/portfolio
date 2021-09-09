@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     marginTop: theme.spacing(1),
+    borderRadius: '5em',
   },
 }));
 
