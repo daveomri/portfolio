@@ -63,7 +63,7 @@ const Greetings = (props) => {
                   <Typography variant="body1" className={classes.typeWriter}>
                     Among my dearest hobbies are working with <b>big data</b>,
                     understanding problems, searching for the best solutions and
-                    <b> building web sites</b>.
+                    <b> building websites</b>.
                   </Typography>
                 </Grid>
                 <Grid item>
