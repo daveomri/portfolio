@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import clsx from 'clsx';
 import { Box, Grid, Button } from '@material-ui/core';
 
 import links from './links';
@@ -10,6 +11,12 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100vh',
     paddingTop: '10vh',
     paddingBottom: '10vh',
+    color: '#0e1111',
+    //backgroundImage: 'url(' + require('./resource/images/strahov.jpg') + ')',
+    backgroundColor: '#FBF7F0',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
   },
   profilePic: {
     minWidth: '150px',
@@ -21,8 +28,12 @@ const useStyles = makeStyles((theme) => ({
   link: {
     marginTop: theme.spacing(1),
     borderRadius: '5em',
-    color: '#000',
-    border: '1px solid #000',
+    color: '#0e1111',
+    border: '1px solid #0e1111',
+    '&:hover': {
+      backgroundColor: '#D9E4DD',
+      border: '1px solid #FBF7F0',
+    },
   },
 }));
 
@@ -30,7 +41,7 @@ const Links = () => {
   const classes = useStyles();
 
   return (
-    <Box className={classes.content}>
+    <Box className={clsx(classes.content)}>
       <Grid container justifyContent="center" alignItems="center">
         <Grid item xs={8} md={4}>
           <Grid container direction="column" spacing={2}>

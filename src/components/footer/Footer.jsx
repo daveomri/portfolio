@@ -14,9 +14,10 @@ const useStyles = makeStyles((theme) => ({
   root: {
     paddingLeft: theme.spacing(3),
     paddingRight: theme.spacing(3),
+    backgroundColor: '#CDC9C3',
   },
   footer: {
-    backgroundColor: '#F2F3F3',
+    backgroundColor: '#555555',
     minHeight: theme.spacing(4),
     [theme.breakpoints.down('xs')]: {
       paddingTop: theme.spacing(1),
@@ -24,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   copyright: {
     alignItems: 'center',
+    color: '#CDC9C3',
     [theme.breakpoints.up('xs')]: {
       justifyContent: 'flex-start',
     },
@@ -39,6 +41,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       justifyContent: 'center',
     },
+  },
+  button: {
+    color: '#CDC9C3',
   },
   mission: {
     [theme.breakpoints.up('xs')]: {

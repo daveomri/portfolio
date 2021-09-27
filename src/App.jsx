@@ -14,11 +14,11 @@ const useStyles = makeStyles((theme) => ({
   content: {},
   paper: {
     minHeight: '100vh',
-    paddingTop: '64px',
+    //paddingTop: '64px',
     [theme.breakpoints.down('xs')]: {
       paddingTop: '56px',
     },
-    backgroundColor: '#F2F3F3',
+    backgroundColor: '#FBF7F0',
   },
 }));
 
