@@ -61,7 +61,7 @@ const Greetings = (props) => {
                 </Grid>
                 <Grid item>
                   <Typography variant="body1" className={classes.typeWriter}>
-                    Among my dearest hobbies are working with <b>big data</b>,
+                    Among my dearest hobbies is working with <b>big data</b>,
                     understanding problems, searching for the best solutions and
                     <b> building websites</b>.
                   </Typography>
