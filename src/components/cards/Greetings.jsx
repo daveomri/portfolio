@@ -32,27 +32,46 @@ const Greetings = (props) => {
         className={classes.root}
       >
         <Grid item xs={12}>
-          <Grid container spacing={2} alignItems="center">
+          <Grid
+            container
+            spacing={3}
+            alignItems="center"
+            justifyContent="center"
+          >
             <Grid item xs={12} sm={12} md={5}>
               <Grid container justifyContent="center" alignItems="center">
                 <img src={profile} alt="Logo" className={classes.profilePic} />
               </Grid>
             </Grid>
-            <Grid item xs={12} sm={12} md={7}>
-              <Grid container justifyContent="center" alignItems="center">
-                <Typography variant="body1" className={classes.typeWriter}>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Duis viverra diam non justo. Duis risus. Duis viverra diam
-                  non justo. Praesent dapibus. Sed ac dolor sit amet purus
-                  malesuada congue. Suspendisse nisl. Curabitur ligula sapien,
-                  pulvinar a vestibulum quis, facilisis vel sapien. In rutrum.
-                  Integer pellentesque quam vel velit. Aenean id metus id velit
-                  ullamcorper pulvinar. Integer lacinia. Vivamus ac leo pretium
-                  faucibus. Cras pede libero, dapibus nec, pretium sit amet, tempor
-                  quis. Nunc tincidunt ante vitae massa. Et harum quidem rerum
-                  facilis est et expedita distinctio. Nullam justo enim,
-                  consectetuer nec, ullamcorper ac, vestibulum in, elit.
-                </Typography>
+            <Grid item xs={11} sm={9} md={7}>
+              <Grid container alignItems="center" spacing={2}>
+                <Grid item>
+                  <Typography variant="body1" className={classes.typeWriter}>
+                    Hey and welcome on my portfolio.
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography variant="body1" className={classes.typeWriter}>
+                    My name is <b>Dave Omrai</b> and I am fresh graguatee of
+                    <b> bachelor</b> degree program data science at
+                    <b>{` Faculty of
+                    Information of Information Technology CTU`}</b>
+                    .
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography variant="body1" className={classes.typeWriter}>
+                    Among my dearest hobbies is working with <b>big data</b>,
+                    understanding problems, searching for the best solutions and
+                    <b> building websites</b>.
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography variant="body1" className={classes.typeWriter}>
+                    In my free time I like to travel, listen to <b>music</b> and
+                    enjoy <b>art</b> in any form.
+                  </Typography>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>

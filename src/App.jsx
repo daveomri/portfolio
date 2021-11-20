@@ -3,23 +3,22 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { Paper } from '@material-ui/core';
 
-import {
-  HashRouter,
-  Switch,
-  Route,
-  Redirect,
-} from 'react-router-dom';
+import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import Header from './components/header/Header';
 import Portfolio from './Portfolio';
 import Links from './Links';
 import Footer from './components/footer/Footer';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   content: {},
   paper: {
     minHeight: '100vh',
-    backgroundColor: '#F2F3F3',
+    //paddingTop: '64px',
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: '56px',
+    },
+    backgroundColor: '#FBF7F0',
   },
 }));
 
@@ -28,8 +27,8 @@ const App = () => {
 
   return (
     <HashRouter>
+      <Header classes={classes.header} />
       <Paper className={classes.paper}>
-        <Header classes={classes.header} />
         <Switch>
           <Route exact path="/links" component={Links} />
           <Route exact path="/" component={Portfolio} />

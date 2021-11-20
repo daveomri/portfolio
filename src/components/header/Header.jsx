@@ -13,9 +13,7 @@ import {
   ListItemIcon,
   ListItemText,
 } from '@material-ui/core';
-import {
-  Link as AppLink,
-} from 'react-router-dom';
+import { Link as AppLink } from 'react-router-dom';
 import { Link } from 'react-scroll';
 import { Menu } from '@material-ui/icons';
 
@@ -25,17 +23,19 @@ import PortraitSharpIcon from '@material-ui/icons/PortraitSharp';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
-    color: '#000',
-    backgroundColor: '#fff',
-    borderBottom: '1px solid #838789',
+    color: '#0e1111',
+    backgroundColor: '#D9E4DD',
+    borderBottom: '1px solid #D9E4DD',
     boxShadow: 'none',
   },
   button: {
+    color: '#0e1111',
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
   },
   drawer: {
-    width: 'auto',
+    backgroundColor: '#FBF7F0',
+    width: theme.spacing(26),
     padding: theme.spacing(2),
   },
   list: {
@@ -88,7 +88,9 @@ const Header = () => {
   const [state, setState] = useState(false);
 
   const pathName = window.location.hash.substring(1);
-  const pathKey = pathToKey[`${pathName}`] ? pathToKey[`${pathName}`] : 'portfolio';
+  const pathKey = pathToKey[`${pathName}`]
+    ? pathToKey[`${pathName}`]
+    : 'portfolio';
 
   const handleState = (newState) => () => {
     setState(newState);
@@ -102,11 +104,13 @@ const Header = () => {
     >
       <List>
         {drawerKeys.map((key) => (
-          <AppLink to={appComponents[key].path} className={classes.link} key={key}>
+          <AppLink
+            to={appComponents[key].path}
+            className={classes.link}
+            key={key}
+          >
             <ListItem button>
-              <ListItemIcon>
-                {appComponents[key].icon}
-              </ListItemIcon>
+              <ListItemIcon>{appComponents[key].icon}</ListItemIcon>
               <ListItemText primary={appComponents[key].text} />
             </ListItem>
           </AppLink>
@@ -124,9 +128,7 @@ const Header = () => {
               key={drawerItem.key}
             >
               <ListItem button>
-                <ListItemIcon>
-                  {drawerItem.icon}
-                </ListItemIcon>
+                <ListItemIcon>{drawerItem.icon}</ListItemIcon>
                 <ListItemText primary={drawerItem.text} />
               </ListItem>
             </Link>
@@ -142,7 +144,9 @@ const Header = () => {
         <Grid container alignItems="center">
           <Grid item xs={3} sm={2} md={1}>
             <Typography variant="h5" className={classes.title}>
-              {appComponents[pathKey] ? appComponents[pathKey].text : 'Error 404'}
+              {appComponents[pathKey]
+                ? appComponents[pathKey].text
+                : 'Error 404'}
             </Typography>
           </Grid>
           <Grid item xs={9} sm={10} md={11}>
