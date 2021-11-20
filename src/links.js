@@ -55,7 +55,7 @@ export default [
     links: [
       {
         name: 'Sudety raport',
-        url: 'http://sudetyraport.9e.cz',
+        url: 'https://sudetyraport.com',
       },
       {
         name: 'Hasicske muzeum Mastov',
