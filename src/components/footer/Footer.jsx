@@ -82,7 +82,7 @@ const socialNetworks = [
   {
     name: 'linkedin',
     icon: <LinkedInIcon fontSize="small" />,
-    url: 'https://www.linkedin.com/in/david-omrai-9797011b7/',
+    url: 'https://www.linkedin.com/in/david-omrai-9797011b7',
   },
   {
     name: 'twitter',
@@ -92,7 +92,7 @@ const socialNetworks = [
   {
     name: 'instagram',
     icon: <InstagramIcon fontSize="small" />,
-    url: 'https://www.instagram.com/daveomri/',
+    url: 'https://www.instagram.com/daveomri',
   },
 ];
 

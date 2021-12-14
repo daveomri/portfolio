@@ -27,6 +27,10 @@ export default [
         name: 'Facebook',
         url: 'https://www.facebook.com/daom99/',
       },
+      {
+        name: 'Goodreads',
+        url: 'https://www.goodreads.com/user/show/137950217-dave-omrai',
+      },
     ],
   },
   {
