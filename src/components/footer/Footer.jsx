@@ -96,7 +96,7 @@ const socialNetworks = [
   },
 ];
 
-const Header = () => {
+const Footer = () => {
   const classes = useStyles();
 
   const openUrl = (url) => (event) => {
@@ -152,10 +152,10 @@ const Header = () => {
   );
 };
 
-Header.displayName = 'Header';
+Footer.displayName = 'Footer';
 
-Header.propTypes = {};
+Footer.propTypes = {};
 
-Header.defaultProps = {};
+Footer.defaultProps = {};
 
-export default Header;
+export default Footer;
