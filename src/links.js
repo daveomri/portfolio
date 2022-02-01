@@ -28,8 +28,16 @@ export default [
         url: 'https://www.facebook.com/daom99/',
       },
       {
+        name: 'Letterboxd',
+        url: 'https://letterboxd.com/omraidav/',
+      },
+      {
         name: 'Goodreads',
         url: 'https://www.goodreads.com/user/show/137950217-dave-omrai',
+      },
+      {
+        name: 'CSFD',
+        url: 'https://www.csfd.cz/uzivatel/481419-omri',
       },
     ],
   },
