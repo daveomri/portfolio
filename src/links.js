@@ -58,13 +58,17 @@ export default [
         url: 'https://sudetyraport.com',
       },
       {
+        name: 'Lokální lakování',
+        url: 'https://loklak.cz/',
+      },
+      {
         name: 'Hasicske muzeum Mastov',
         url: 'https://forgacmuzeum.cz',
       },
-      {
-        name: 'Similarity join',
-        url: 'https://similarity-join.herokuapp.com/',
-      },
+      // {
+      //   name: 'Similarity join',
+      //   url: 'https://similarity-join.herokuapp.com/',
+      // },
       {
         name: 'Server configuration',
         url: 'http://omri.9e.cz/',
@@ -77,6 +81,10 @@ export default [
       {
         name: 'Spotify',
         url: 'https://open.spotify.com/user/uhz56sws2qt183t6zy4kog6nb?si=PZkaeNlAR7KQ4su9ZRBomg',
+      },
+      {
+        name: 'GoodReads',
+        url: 'https://www.goodreads.com/daveomri',
       },
       {
         name: 'Steam',

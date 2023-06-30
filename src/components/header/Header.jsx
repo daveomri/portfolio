@@ -28,6 +28,10 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: '1px solid #D9E4DD',
     boxShadow: 'none',
   },
+  toolbar: {
+    minHeight: '4em',
+    zIndex: 1,
+  },
   button: {
     color: '#0e1111',
     marginLeft: theme.spacing(1),
@@ -140,7 +144,7 @@ const Header = () => {
 
   return (
     <AppBar position="fixed" className={classes.appBar}>
-      <Toolbar>
+      <Toolbar className={classes.toolbar}>
         <Grid container alignItems="center">
           <Grid item xs={3} sm={2} md={1}>
             <Typography variant="h5" className={classes.title}>

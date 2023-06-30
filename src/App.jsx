@@ -11,13 +11,17 @@ import Links from './Links';
 import Footer from './components/footer/Footer';
 
 const useStyles = makeStyles((theme) => ({
-  content: {},
+  content: {
+    //paddingTop: '4em',
+  },
   paper: {
     minHeight: '100vh',
+    marginTop: '4em',
     //paddingTop: '64px',
-    [theme.breakpoints.down('xs')]: {
-      paddingTop: '56px',
-    },
+    // [theme.breakpoints.down('xs')]: {
+    //   //paddingTop: '56px',
+    //   marginTop: '57px',
+    // },
     backgroundColor: '#FBF7F0',
   },
 }));

@@ -9,7 +9,7 @@ import profile from './resource/images/profile.png';
 const useStyles = makeStyles((theme) => ({
   content: {
     minHeight: '100vh',
-    paddingTop: '10vh',
+    marginTop: '4em',
     paddingBottom: '10vh',
     color: '#0e1111',
     //backgroundImage: 'url(' + require('./resource/images/strahov.jpg') + ')',
@@ -17,6 +17,11 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+    [theme.breakpoints.down('xs')]: {
+      //paddingTop: '56px',
+      marginTop: '3em',
+    },
+    paddingTop: '2em',
   },
   profilePic: {
     minWidth: '150px',
