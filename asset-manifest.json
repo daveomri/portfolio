@@ -1,11 +1,18 @@
 {
-  "main.css": "static/css/main.e64678cb.css",
-  "main.css.map": "static/css/main.e64678cb.css.map",
-  "main.js": "static/js/main.4c4902d6.js",
-  "main.js.map": "static/js/main.4c4902d6.js.map",
-  "static/js/0.e18d6b5f.chunk.js": "static/js/0.e18d6b5f.chunk.js",
-  "static/js/0.e18d6b5f.chunk.js.map": "static/js/0.e18d6b5f.chunk.js.map",
-  "static/media/GOGOIA-Deco.ttf": "static/media/GOGOIA-Deco.7c4b0077.ttf",
-  "static/media/GOGOIA-Regular.ttf": "static/media/GOGOIA-Regular.91cb590d.ttf",
-  "static/media/profile.png": "static/media/profile.ad33dee0.png"
+  "files": {
+    "main.css": "/portfolio/static/css/main.841b489c.css",
+    "main.js": "/portfolio/static/js/main.52b7000c.js",
+    "static/js/787.b9ec5bb0.chunk.js": "/portfolio/static/js/787.b9ec5bb0.chunk.js",
+    "static/media/profile.png": "/portfolio/static/media/profile.ce1e3fb4bbf80be99467.png",
+    "static/media/GOGOIA-Deco.ttf": "/portfolio/static/media/GOGOIA-Deco.af0be37126d1a29ba863.ttf",
+    "static/media/GOGOIA-Regular.ttf": "/portfolio/static/media/GOGOIA-Regular.9b1244b6960987df343b.ttf",
+    "index.html": "/portfolio/index.html",
+    "main.841b489c.css.map": "/portfolio/static/css/main.841b489c.css.map",
+    "main.52b7000c.js.map": "/portfolio/static/js/main.52b7000c.js.map",
+    "787.b9ec5bb0.chunk.js.map": "/portfolio/static/js/787.b9ec5bb0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.841b489c.css",
+    "static/js/main.52b7000c.js"
+  ]
 }
