@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { Box, Grid, Button } from '@material-ui/core';
 
 import links from './links';
-import profile from './resource/images/profile.png';
+import profile from './resource/images/profile1.JPEG';
 
 const useStyles = makeStyles((theme) => ({
   content: {
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     width: '10vw',
     borderRadius: '100vw',
     height: 'auto',
-    border: '1px solid black',
+    border: '0px solid black',
   },
   link: {
     marginTop: theme.spacing(1),
