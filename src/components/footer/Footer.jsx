@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Typography, IconButton } from '@material-ui/core';
 
-import TwitterIcon from '@material-ui/icons/Twitter';
+import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -85,9 +85,9 @@ const socialNetworks = [
     url: 'https://www.linkedin.com/in/david-omrai-9797011b7/',
   },
   {
-    name: 'twitter',
-    icon: <TwitterIcon fontSize="small" />,
-    url: 'https://twitter.com/DaveOmri',
+    name: 'facebook',
+    icon: <FacebookIcon fontSize="small" />,
+    url: 'https://www.facebook.com/daom99/',
   },
   {
     name: 'instagram',

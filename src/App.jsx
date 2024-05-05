@@ -10,7 +10,7 @@ import Portfolio from './Portfolio';
 import Links from './Links';
 import Footer from './components/footer/Footer';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   content: {
     //paddingTop: '4em',
   },

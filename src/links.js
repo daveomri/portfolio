@@ -13,32 +13,82 @@ export default [
     ],
   },
   {
-    name: 'Social media',
+    name: 'Books & writing',
     links: [
       {
-        name: 'Twitter',
-        url: 'https://twitter.com/',
+        name: 'A Dimming Mind [book]',
+        url: 'https://a.co/d/gCyaqH7',
+      },
+      {
+        name: 'A Dimming Mind [podcast]',
+        url: 'https://open.spotify.com/show/0LkXdGo7OXEVkqIXq8KUAZ?si=39c49e0e33894285',
+      },
+      {
+        name: 'Goodreads',
+        url: 'https://www.goodreads.com/book/show/198116119-a-dimming-mind',
+      },
+      {
+        name: 'Buy Me a Coffee',
+        url: 'https://www.buymeacoffee.com/omraidav/e/159403',
+      },
+    ],
+  },
+  {
+    name: 'My projects & related',
+    links: [
+      {
+        name: 'Sudety raport',
+        url: 'https://sudetyraport.com',
+      },
+      {
+        name: 'Hasicske muzeum Mastov',
+        url: 'https://forgacmuzeum.cz',
+      },
+      {
+        name: 'Pallets stacking planner',
+        url: 'https://omraidav.pythonanywhere.com/',
+      },
+      {
+        name: 'Server configuration',
+        url: 'http://omri.9e.cz/',
+      },
+      {
+        name: 'Lokální lakování',
+        url: 'https://loklak.cz/',
+      },
+      // {
+      //   name: 'Similarity join',
+      //   url: 'https://similarity-join.herokuapp.com/',
+      // },
+    ],
+  },
+  {
+    name: 'Social media',
+    links: [
+      // {
+      //   name: 'Twitter',
+      //   url: 'https://twitter.com/DaveOmri',
+      // },
+      {
+        name: 'Facebook',
+        url: 'https://www.facebook.com/daom99/',
       },
       {
         name: 'Instagram',
         url: 'https://www.instagram.com/daveomri',
       },
-      {
-        name: 'Facebook',
-        url: 'https://www.facebook.com/daom99/',
-      },
     ],
   },
   {
-    name: 'Art & writing',
+    name: 'Art & related',
     links: [
-      {
-        name: 'Wattpad',
-        url: 'https://www.wattpad.com/user/just__dave',
-      },
       {
         name: 'Poetizer',
         url: 'https://poetizer.com/author/203392',
+      },
+      {
+        name: 'Wattpad',
+        url: 'https://www.wattpad.com/user/just__dave',
       },
       {
         name: 'Pinterest',
@@ -51,40 +101,11 @@ export default [
     ],
   },
   {
-    name: 'My projects & related',
-    links: [
-      {
-        name: 'Sudety raport',
-        url: 'https://sudetyraport.com',
-      },
-      {
-        name: 'Lokální lakování',
-        url: 'https://loklak.cz/',
-      },
-      {
-        name: 'Hasicske muzeum Mastov',
-        url: 'https://forgacmuzeum.cz',
-      },
-      // {
-      //   name: 'Similarity join',
-      //   url: 'https://similarity-join.herokuapp.com/',
-      // },
-      {
-        name: 'Server configuration',
-        url: 'http://omri.9e.cz/',
-      },
-    ],
-  },
-  {
     name: 'Fun & other',
     links: [
       {
         name: 'Spotify',
         url: 'https://open.spotify.com/user/uhz56sws2qt183t6zy4kog6nb?si=PZkaeNlAR7KQ4su9ZRBomg',
-      },
-      {
-        name: 'GoodReads',
-        url: 'https://www.goodreads.com/daveomri',
       },
       {
         name: 'Steam',
