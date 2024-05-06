@@ -86,10 +86,10 @@ export default [
         name: 'Poetizer',
         url: 'https://poetizer.com/author/203392',
       },
-      {
-        name: 'Wattpad',
-        url: 'https://www.wattpad.com/user/just__dave',
-      },
+      // {
+      //   name: 'Wattpad',
+      //   url: 'https://www.wattpad.com/user/just__dave',
+      // },
       {
         name: 'Pinterest',
         url: 'https://pin.it/2sHkWCC',
@@ -110,6 +110,10 @@ export default [
       {
         name: 'Steam',
         url: 'https://steamcommunity.com/profiles/76561198113964621',
+      },
+      {
+        name: 'Letterboxd',
+        url: 'https://letterboxd.com/omraidav',
       },
       {
         name: 'Anime list',

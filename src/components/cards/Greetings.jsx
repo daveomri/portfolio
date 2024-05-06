@@ -53,8 +53,8 @@ const Greetings = (props) => {
                 <Grid item>
                   <Typography variant="body1" className={classes.typeWriter}>
                     My name is <b>Dave Omrai</b> and I am graguatee of
-                    <b> bachelor</b> degree program data science, and I am
-                    finishing my <b>master</b> degree AI program at
+                    <b> bachelor</b> degree program <b>data science</b>, and I
+                    am finishing my <b>master</b> degree <b>AI</b> program at
                     <b>{` Faculty of
                     Information of Information Technology CTU`}</b>
                     .
@@ -70,22 +70,22 @@ const Greetings = (props) => {
                 </Grid>
                 <Grid item>
                   <Typography variant="body1" className={classes.typeWriter}>
-                    Throughout my studies and projects I worked with
+                    Throughout my studies and projects I worked with{' '}
                     <b>
                       C, C++, Python, Java, JS, TS, PHP, React, Django, Flask,
-                      Ruby, SQL, NoSQL, Assembler, and more.
+                      Ruby, SQL, NoSQL, Assembler, and more.{' '}
                     </b>
                     I also have a backround in
                     <b> networking, soldering, repairs of all kind. </b>
-                    And I am still always happy to learn new technologies.
+                    And I am always happy to learn new technologies.
                   </Typography>
                 </Grid>
                 <Grid item>
                   <Typography variant="body1" className={classes.typeWriter}>
                     I am also an <b>admin and web developer</b> of{' '}
                     <b>SudetyRaport</b>, rap plug. Together with our team, we
-                    build a community reaching <b>2k</b> readers and still
-                    growing. Apart of this project, I am also an admin of few
+                    have built a community reaching <b>2k</b> readers and still
+                    growing. Apart from this project, I am also an admin of few
                     other React/Python/WordPress projects.
                   </Typography>
                 </Grid>
@@ -93,8 +93,8 @@ const Greetings = (props) => {
                   <Typography variant="body1" className={classes.typeWriter}>
                     In my free time I like to <b>travel</b>, listen to{' '}
                     <b>music</b>, enjoy <b>art</b> in any form, and write{' '}
-                    <b>poetry</b>. I have also already published and ilustrated
-                    one poetry collection called <b>A Dimming Mind</b>.
+                    <b>poetry</b>. I have already published and ilustrated one
+                    poetry collection called <b>A Dimming Mind</b>.
                   </Typography>
                 </Grid>
               </Grid>
