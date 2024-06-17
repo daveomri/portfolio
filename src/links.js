@@ -16,8 +16,12 @@ export default [
     name: 'Books & writing',
     links: [
       {
-        name: 'A Dimming Mind [book]',
+        name: 'A Dimming Mind [amazon]',
         url: 'https://a.co/d/gCyaqH7',
+      },
+      {
+        name: 'A Dimming Mind [pdf]',
+        url: 'https://www.buymeacoffee.com/omraidav/e/159403',
       },
       {
         name: 'A Dimming Mind [podcast]',
@@ -26,10 +30,6 @@ export default [
       {
         name: 'Goodreads',
         url: 'https://www.goodreads.com/book/show/198116119-a-dimming-mind',
-      },
-      {
-        name: 'Buy Me a Coffee',
-        url: 'https://www.buymeacoffee.com/omraidav/e/159403',
       },
     ],
   },
