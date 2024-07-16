@@ -28,7 +28,7 @@ export default [
         url: 'https://open.spotify.com/show/0LkXdGo7OXEVkqIXq8KUAZ?si=39c49e0e33894285',
       },
       {
-        name: 'Goodreads',
+        name: 'Goodreads ADM',
         url: 'https://www.goodreads.com/book/show/198116119-a-dimming-mind',
       },
     ],
@@ -79,27 +79,27 @@ export default [
       },
     ],
   },
-  {
-    name: 'Art & related',
-    links: [
-      {
-        name: 'Poetizer',
-        url: 'https://poetizer.com/author/203392',
-      },
-      // {
-      //   name: 'Wattpad',
-      //   url: 'https://www.wattpad.com/user/just__dave',
-      // },
-      {
-        name: 'Pinterest',
-        url: 'https://pin.it/2sHkWCC',
-      },
-      {
-        name: 'Redbubble',
-        url: 'https://www.redbubble.com/people/omraidav',
-      },
-    ],
-  },
+  // {
+  //   name: 'Art & related',
+  //   links: [
+  //     {
+  //       name: 'Poetizer',
+  //       url: 'https://poetizer.com/author/203392',
+  //     },
+  //     // {
+  //     //   name: 'Wattpad',
+  //     //   url: 'https://www.wattpad.com/user/just__dave',
+  //     // },
+  //     // {
+  //     //   name: 'Pinterest',
+  //     //   url: 'https://pin.it/2sHkWCC',
+  //     // },
+  //     // {
+  //     //   name: 'Redbubble',
+  //     //   url: 'https://www.redbubble.com/people/omraidav',
+  //     // },
+  //   ],
+  // },
   {
     name: 'Fun & other',
     links: [
@@ -107,10 +107,10 @@ export default [
         name: 'Spotify',
         url: 'https://open.spotify.com/user/uhz56sws2qt183t6zy4kog6nb?si=PZkaeNlAR7KQ4su9ZRBomg',
       },
-      {
-        name: 'Steam',
-        url: 'https://steamcommunity.com/profiles/76561198113964621',
-      },
+      // {
+      //   name: 'Steam',
+      //   url: 'https://steamcommunity.com/profiles/76561198113964621',
+      // },
       {
         name: 'Letterboxd',
         url: 'https://letterboxd.com/omraidav',

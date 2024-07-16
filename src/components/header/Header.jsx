@@ -15,11 +15,16 @@ import {
 } from '@material-ui/core';
 import { Link as AppLink } from 'react-router-dom';
 import { Link } from 'react-scroll';
-import { Menu } from '@material-ui/icons';
 
 import LinkIcon from '@material-ui/icons/Link';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import PortraitSharpIcon from '@material-ui/icons/PortraitSharp';
+
+import {
+  AccountCircle as AccountCircleIcon,
+  PortraitSharp as PortraitSharpIcon,
+  Code as CodeIcon,
+  PieChart as PieChartIcon,
+  Menu,
+} from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -75,6 +80,16 @@ const appComponents = {
         key: 'about_me',
         text: 'About me',
         icon: <AccountCircleIcon />,
+      },
+      {
+        key: 'skills',
+        text: 'My skills',
+        icon: <CodeIcon />,
+      },
+      {
+        key: 'projects',
+        text: 'My projects',
+        icon: <PieChartIcon />,
       },
     ],
   },

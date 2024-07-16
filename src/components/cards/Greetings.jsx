@@ -18,6 +18,9 @@ const useStyles = makeStyles(() => ({
     height: 'auto',
     border: '0px solid black',
   },
+  greetingsText: {
+    marginTop: '3em',
+  },
 }));
 
 const Greetings = (props) => {
@@ -43,7 +46,7 @@ const Greetings = (props) => {
                 <img src={profile} alt="Logo" className={classes.profilePic} />
               </Grid>
             </Grid>
-            <Grid item xs={11} sm={9} md={7}>
+            <Grid item xs={11} sm={9} md={7} className="greetingsText">
               <Grid container alignItems="center" spacing={2}>
                 <Grid item>
                   <Typography variant="body1" className={classes.typeWriter}>
@@ -53,7 +56,7 @@ const Greetings = (props) => {
                 <Grid item>
                   <Typography variant="body1" className={classes.typeWriter}>
                     My name is <b>Dave Omrai</b> and I am graguatee of
-                    <b>master</b> degree <b>AI / data science</b> program at
+                    <b> master</b> degree <b>AI / data science</b> program at
                     <b>{` Faculty of
                     Information of Information Technology CTU`}</b>
                     .
@@ -64,51 +67,9 @@ const Greetings = (props) => {
                     Among my hobbies are working with <b>neural networks</b>,{' '}
                     <b>big data</b>, understanding the information beneath it,
                     finding better finding better ways to solve real-world
-                    problems, and solutions.
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  <Typography variant="body1" className={classes.typeWriter}>
-                    Throughout my studies and projects I worked with{' '}
-                    <b>
-                      C, C++, Python(PyTorch, TensorFlow...), Java, JS, TS, PHP,
-                      React, Django, Flask, Ruby, SQL, NoSQL, Assembler, and
-                      more.{' '}
-                    </b>
-                    I also have a backround in
-                    <b> networking, soldering, repairs of all kind. </b>
-                    And I am always happy to learn new things.
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  <Typography variant="body1" className={classes.typeWriter}>
-                    I am also an <b>admin and web developer</b> of{' '}
-                    <b>
-                      <a
-                        href="//www.sudetyraport.com"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        SudetyRaport
-                      </a>
-                    </b>
-                    , rap plug. Together with our team, we have built a
-                    community reaching <b>2k</b> readers and still growing.
-                    Apart from this project, I am also an admin of few other
-                    other React/Python/WordPress projects.
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  <Typography variant="body1" className={classes.typeWriter}>
-                    In my free time I like to <b>travel</b>, listen to{' '}
-                    <b>music</b>, enjoy <b>art</b> in any form, and write{' '}
-                    <b>poetry</b>. I have already published and ilustrated one
-                    poetry collection called <b>A Dimming Mind</b>.
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  <Typography variant="body1" className={classes.typeWriter}>
-                    You can also find me on these <a href="#/links">socials</a>.
+                    problems, and solutions. Also listening to music, playing
+                    guitar, playing the tin whistle, writing poetry, and
+                    creating art in any form.
                   </Typography>
                 </Grid>
               </Grid>
