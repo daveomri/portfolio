@@ -64,9 +64,8 @@ const Projects = (props) => {
                         SudetyRaport
                       </a>
                     </b>
-                    , rap plug. With our team we are supporting a community of
-                    <b> over 2,000 readers</b> by providing a platform for
-                    insightful articles articles on{' '}
+                    , rap plug. With our team we provide a platform to
+                    <b> over 2,000 readers</b> for insightful articles on{' '}
                     <i>
                       socio-cultural issues and art-related themes within the
                       rap music industry
