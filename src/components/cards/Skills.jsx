@@ -12,6 +12,7 @@ const useStyles = makeStyles(() => ({
   },
   skillsText: {
     marginTop: '3em',
+    textAlign: 'center',
   },
 }));
 
@@ -40,10 +41,10 @@ const Skills = (props) => {
                 </Typography>
               </Grid>
             </Grid>
-            <Grid item xs={12} sm={9} md={12} className="skillsText">
+            <Grid item xs={12} sm={9} md={12}>
               <Grid container alignItems="center" spacing={2}>
                 <Grid item>
-                  <Typography variant="body1" className={classes.typeWriter}>
+                  <Typography variant="body1" className={classes.skillsText}>
                     Throughout my studies and projects I worked with{' '}
                     <b>
                       C, C++, Python(PyTorch, TensorFlow...), Java, JS, TS, PHP,

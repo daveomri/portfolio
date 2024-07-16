@@ -7,7 +7,7 @@ import profile from '../../resource/images/profile1.JPEG';
 
 import Card from './Card';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: '100vh',
   },
@@ -20,6 +20,10 @@ const useStyles = makeStyles(() => ({
   },
   greetingsText: {
     marginTop: '3em',
+    textAlign: 'left',
+    [theme.breakpoints.down('sm')]: {
+      textAlign: 'center',
+    },
   },
 }));
 
@@ -46,15 +50,12 @@ const Greetings = (props) => {
                 <img src={profile} alt="Logo" className={classes.profilePic} />
               </Grid>
             </Grid>
-            <Grid item xs={11} sm={9} md={7} className="greetingsText">
+            <Grid item xs={11} sm={9} md={7}>
               <Grid container alignItems="center" spacing={2}>
                 <Grid item>
-                  <Typography variant="body1" className={classes.typeWriter}>
+                  <Typography variant="body1" className={classes.greetingsText}>
                     Hey and welcome to my portfolio.
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  <Typography variant="body1" className={classes.typeWriter}>
+                    <br />
                     My name is <b>Dave Omrai</b> and I am graguatee of
                     <b> master</b> degree <b>AI / data science</b> program at
                     <b>{` Faculty of

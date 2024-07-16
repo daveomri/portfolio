@@ -18,6 +18,9 @@ const useStyles = makeStyles(() => ({
     height: 'auto',
     border: '0px solid black',
   },
+  projText: {
+    textAlign: 'center',
+  },
 }));
 
 const Projects = (props) => {
@@ -50,7 +53,7 @@ const Projects = (props) => {
             <Grid item xs={11} sm={9} md={12}>
               <Grid container alignItems="center" spacing={2}>
                 <Grid item>
-                  <Typography variant="body1" className={classes.typeWriter}>
+                  <Typography variant="body1" className={classes.projText}>
                     I am also an <b>admin and web developer</b> of{' '}
                     <b>
                       <a
