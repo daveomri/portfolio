@@ -62,16 +62,6 @@ const Greetings = (props) => {
                     .
                   </Typography>
                 </Grid>
-                <Grid item>
-                  <Typography variant="body1" className={classes.typeWriter}>
-                    Among my hobbies are working with <b>neural networks</b>,{' '}
-                    <b>big data</b>, understanding the information beneath it,
-                    finding better finding better ways to solve real-world
-                    problems, and solutions. Also listening to music, playing
-                    guitar, playing the tin whistle, writing poetry, and
-                    creating art in any form.
-                  </Typography>
-                </Grid>
               </Grid>
             </Grid>
           </Grid>
