@@ -10,6 +10,8 @@ import Portfolio from './Portfolio';
 import Links from './Links';
 import Footer from './components/footer/Footer';
 
+import ScrollToTop from './ScrollToTop';
+
 const useStyles = makeStyles(() => ({
   content: {
     //paddingTop: '4em',
@@ -31,12 +33,15 @@ const App = () => {
 
   return (
     <HashRouter>
+      <ScrollToTop />
       <Header classes={classes.header} />
       <Paper className={classes.paper}>
         <Switch>
           <Route exact path="/links" component={Links} />
           <Route exact path="/" component={Portfolio} />
-          <Route render={() => <Redirect to={{ pathname: '/' }} />} />
+          <Route path="*">
+            <Redirect to="/" />
+          </Route>
         </Switch>
       </Paper>
       <Footer classes={classes.footer} />
