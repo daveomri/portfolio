@@ -64,14 +64,14 @@ const Projects = (props) => {
                         SudetyRaport
                       </a>
                     </b>
-                    , rap plug. With our team we provide a platform to
+                    , rap plug. With our team, we provide a platform to
                     <b> over 2,000 readers</b> for insightful articles on{' '}
                     <i>
-                      socio-cultural issues and art-related themes within the
-                      rap music industry
+                      for insightful articles on socio-cultural issues and
+                      art-related themes within the rap music industry.
                     </i>
-                    . Apart from this project, I am also an admin of few other
-                    other React/Python/WordPress projects.
+                    Apart from this project, I also administrate a few other
+                    React/Python/WordPress projects.
                   </Typography>
                 </Grid>
               </Grid>

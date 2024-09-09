@@ -54,9 +54,9 @@ const Skills = (props) => {
                       Full-Stack.{' '}
                     </b>
                     <i>
-                      I also have a backround in
-                      <b> networking, soldering, repairs of all kind. </b>
-                      And I am always happy to learn new things.
+                      I also have a background in
+                      <b> networking, soldering, and repairs. </b> And I am
+                      always happy to learn new things.
                     </i>
                   </Typography>
                 </Grid>

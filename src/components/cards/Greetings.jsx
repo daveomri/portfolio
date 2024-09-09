@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
@@ -56,11 +57,9 @@ const Greetings = (props) => {
                   <Typography variant="body1" className={classes.greetingsText}>
                     Hey and welcome to my portfolio.
                     <br />
-                    My name is <b>Dave Omrai</b> and I am graguatee of
-                    <b> master</b> degree <b>AI / data science</b> program at
-                    <b>{` Faculty of
-                    Information of Information Technology CTU`}</b>
-                    .
+                    My name is <b>Dave Omrai</b> and I graduated with a master
+                    {`'`}s <b>degree in AI/data science</b> program at the{' '}
+                    <b>Faculty of Information Technology (CTU)</b>.
                   </Typography>
                 </Grid>
               </Grid>
