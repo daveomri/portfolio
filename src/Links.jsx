@@ -1,62 +1,78 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
-import { Box, Grid, Button } from '@material-ui/core';
+import { Box, Grid, Button } from '@mui/material';
 
-import links from './links';
-import profile from './resource/images/profile.png';
+import links from './linksData';
+import profile from './resource/images/profile.webp';
+import HeroBackdrop from './components/HeroBackdrop';
+import { colors } from './theme';
 
-const useStyles = makeStyles((theme) => ({
-  content: {
-    minHeight: '100vh',
-    paddingTop: '10vh',
-    paddingBottom: '10vh',
-    color: '#0e1111',
-    //backgroundImage: 'url(' + require('./resource/images/strahov.jpg') + ')',
-    backgroundColor: '#FBF7F0',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
+const rootSx = {
+  position: 'relative',
+  minHeight: '100vh',
+  backgroundColor: colors.cream,
+};
+
+const contentSx = {
+  position: 'relative',
+  zIndex: 1,
+  mt: { xs: '3em', sm: '4em' },
+  pt: '2em',
+  pb: '10vh',
+  color: colors.ink,
+};
+
+const profilePicSx = {
+  minWidth: '150px',
+  width: '10vw',
+  borderRadius: '100vw',
+  height: 'auto',
+  border: '0px solid black',
+};
+
+const linkSx = {
+  mt: 1,
+  borderRadius: '5em',
+  color: colors.ink,
+  border: `1px solid ${colors.ink}`,
+  // Frosted cream fill so the pills read cleanly over the hero photo
+  // (and blend into the page once it has faded to cream).
+  backgroundColor: 'rgba(251, 247, 240, 0.72)',
+  backdropFilter: 'blur(2px)',
+  '&:hover': {
+    backgroundColor: colors.sage,
+    border: `1px solid ${colors.cream}`,
   },
-  profilePic: {
-    minWidth: '150px',
-    width: '10vw',
-    borderRadius: '100vw',
-    height: 'auto',
-    border: '1px solid black',
-  },
-  link: {
-    marginTop: theme.spacing(1),
-    borderRadius: '5em',
-    color: '#0e1111',
-    border: '1px solid #0e1111',
-    '&:hover': {
-      backgroundColor: '#D9E4DD',
-      border: '1px solid #FBF7F0',
-    },
-  },
-}));
+};
 
-const Links = () => {
-  const classes = useStyles();
+const sectionTitleSx = {
+  textAlign: 'center',
+  textShadow:
+    '0 0 4px rgba(251, 247, 240, 0.95), 0 1px 16px rgba(251, 247, 240, 0.9)',
+};
 
-  return (
-    <Box className={clsx(classes.content)}>
+const Links = () => (
+  <Box sx={rootSx}>
+    <HeroBackdrop height={{ xs: '45vh', md: '65vh' }} position="top" />
+    <Box sx={contentSx}>
       <Grid container justifyContent="center" alignItems="center">
-        <Grid item xs={8} md={4}>
+        <Grid size={{ xs: 8, md: 4 }}>
           <Grid container direction="column" spacing={2}>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Grid
                 container
                 direction="column"
                 justifyContent="center"
                 alignItems="center"
               >
-                <img src={profile} alt="Logo" className={classes.profilePic} />
+                <Box
+                  component="img"
+                  src={profile}
+                  alt="Profile"
+                  sx={profilePicSx}
+                />
               </Grid>
             </Grid>
-            {links.map((linkSection, key) => (
-              <Grid item xs={12} key={key}>
+            {links.map((linkSection) => (
+              <Grid size={12} key={linkSection.name}>
                 <Grid
                   container
                   direction="column"
@@ -64,17 +80,18 @@ const Links = () => {
                   alignItems="center"
                   spacing={1}
                 >
-                  <Grid item xs={12}>
+                  <Grid size={12} sx={sectionTitleSx}>
                     {linkSection.name}
                   </Grid>
-                  {linkSection.links.map((link, keyy) => (
+                  {linkSection.links.map((link) => (
                     <Button
                       fullWidth
-                      key={keyy}
+                      key={link.name}
                       variant="outlined"
                       color="primary"
-                      className={classes.link}
+                      sx={linkSx}
                       target="_blank"
+                      rel="noopener noreferrer"
                       href={link.url}
                     >
                       {link.name}
@@ -87,13 +104,9 @@ const Links = () => {
         </Grid>
       </Grid>
     </Box>
-  );
-};
+  </Box>
+);
 
 Links.displayName = 'Links';
-
-Links.propTypes = {};
-
-Links.defaultProps = {};
 
 export default Links;
