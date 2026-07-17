@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio and links page for David Omrai.
 
-## Available Scripts
+Built with **React 19 + Vite + MUI v7**, served as a static site by **nginx**
+in Docker, and exposed to the internet through a **Cloudflare Tunnel**.
 
-In the project directory, you can run:
+## Tech stack
 
-### `npm start`
+| Concern      | Choice                                  |
+| ------------ | --------------------------------------- |
+| UI           | React 19, Material UI (MUI) v7, emotion |
+| Routing      | react-router v7 (`BrowserRouter`)       |
+| Build tool   | Vite 7                                   |
+| Lint/format  | ESLint 9 (flat config) + Prettier       |
+| Container    | Multi-stage Docker → nginx              |
+| Public access| Cloudflare Tunnel (`cloudflared`)       |
+| CI/CD        | GitHub Actions → image on GHCR          |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> Note: Vite 7 requires Node.js **20.19+** or **22.12+**. Use Node 22 for local dev.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Local development
 
-### `npm test`
+```bash
+npm install
+npm run dev        # http://localhost:3000
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Other scripts:
 
-### `npm run build`
+```bash
+npm run build      # production build into ./build
+npm run preview    # serve the production build locally
+npm run lint       # eslint
+npm run format     # prettier --write
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+src/
+  main.jsx            # entry: ThemeProvider + CssBaseline + Router
+  theme.js            # MUI theme + shared color palette
+  App.jsx             # routes: / (Portfolio) and /links (Links)
+  Portfolio.jsx       # "about me" page
+  Links.jsx           # link-tree page (data-driven)
+  linksData.js        # the link sections/URLs
+  components/
+    header/Header.jsx # app bar + swipeable drawer nav
+    footer/Footer.jsx # social icons
+    cards/            # Card wrapper + Greetings card
+  resource/           # fonts + images
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Docker
 
-### `npm run eject`
+Build and run everything (app + tunnel) with Compose:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+cp .env.example .env         # then paste your Cloudflare tunnel token
+docker compose up --build -d
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Or just the web container:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+docker build -t portfolio .
+docker run --rm -p 8080:80 portfolio   # http://localhost:8080
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The image is a static nginx build with SPA fallback (`/links` and any other
+route resolve to `index.html`), gzip, and long-cache headers on hashed assets.
 
-## Learn More
+## Cloudflare Tunnel (self-hosting)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. In the Cloudflare **Zero Trust** dashboard: **Networks → Tunnels → Create a
+   tunnel** (type *Cloudflared*).
+2. Copy the tunnel **token** into `.env` as `TUNNEL_TOKEN`.
+3. Add a **Public Hostname** for your domain routing to `http://web:80`.
+4. `docker compose up -d`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+No router port-forwarding is needed and your home IP stays private; Cloudflare
+terminates TLS.
 
-### Code Splitting
+## Versioning & releases
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Semantic Versioning via git tags.
 
-### Analyzing the Bundle Size
+- Every PR and push to `main`/`master` runs **lint + build** (`.github/workflows/ci.yml`).
+- Pushing a tag like `v1.2.3` builds and publishes a Docker image to
+  **GHCR** (`.github/workflows/release.yml`):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
 
-### Making a Progressive Web App
+On the server, pull and restart:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+docker compose pull && docker compose up -d
+```

@@ -1,0 +1,32 @@
+services:
+  web:
+    # Local: `docker compose up --build` builds from source.
+    # Prod: override with the published image, e.g.
+    #   image: ghcr.io/daveomri/portfolio:latest
+    build: .
+    image: ghcr.io/daveomri/portfolio:latest
+    restart: unless-stopped
+    # Optional: expose on the host for direct/local access.
+    # Not required when traffic comes only through the tunnel.
+    ports:
+      - "8080:80"
+    networks:
+      - web
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    environment:
+      # Create a tunnel in the Cloudflare Zero Trust dashboard and put its
+      # token in a local .env file (see .env.example). Point the tunnel's
+      # public hostname at http://web:80.
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    depends_on:
+      - web
+    networks:
+      - web
+
+networks:
+  web:
+    driver: bridge
