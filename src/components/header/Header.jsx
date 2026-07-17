@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { useState } from 'react';
 import {
   AppBar,
   Toolbar,
@@ -10,48 +9,36 @@ import {
   SwipeableDrawer,
   Divider,
   ListItem,
+  ListItemButton,
   ListItemIcon,
   ListItemText,
-} from '@material-ui/core';
-import { Link as AppLink } from 'react-router-dom';
-import { Link } from 'react-scroll';
-import { Menu } from '@material-ui/icons';
+} from '@mui/material';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
+import MenuIcon from '@mui/icons-material/Menu';
+import LinkIcon from '@mui/icons-material/Link';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import PortraitSharpIcon from '@mui/icons-material/PortraitSharp';
+import CodeIcon from '@mui/icons-material/Code';
+import PieChartIcon from '@mui/icons-material/PieChart';
+import GroupsIcon from '@mui/icons-material/Groups';
 
-import LinkIcon from '@material-ui/icons/Link';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import PortraitSharpIcon from '@material-ui/icons/PortraitSharp';
+import { colors } from '../../theme';
+import scrollToSection from '../../scrollToSection';
 
-const useStyles = makeStyles((theme) => ({
-  appBar: {
-    color: '#0e1111',
-    backgroundColor: '#D9E4DD',
-    borderBottom: '1px solid #D9E4DD',
-    boxShadow: 'none',
-  },
-  button: {
-    color: '#0e1111',
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-  },
-  drawer: {
-    backgroundColor: '#FBF7F0',
-    width: theme.spacing(26),
-    padding: theme.spacing(2),
-  },
-  list: {
-    width: 250,
-  },
-  fullList: {
-    width: 'auto',
-  },
-  title: {
-    fontFamily: 'GOGOIA-Deco',
-  },
-  link: {
-    textDecoration: 'none',
-    color: '#000',
-  },
-}));
+const appBarSx = {
+  color: colors.ink,
+  backgroundColor: colors.sage,
+  borderBottom: `1px solid ${colors.sage}`,
+  boxShadow: 'none',
+};
+
+const drawerSx = {
+  backgroundColor: colors.cream,
+  width: (theme) => theme.spacing(26),
+  p: 2,
+};
+
+const navLinkSx = { textDecoration: 'none', color: '#000' };
 
 const drawerKeys = ['portfolio', 'links'];
 
@@ -72,6 +59,21 @@ const appComponents = {
         text: 'About me',
         icon: <AccountCircleIcon />,
       },
+      {
+        key: 'skills',
+        text: 'My skills',
+        icon: <CodeIcon />,
+      },
+      {
+        key: 'projects',
+        text: 'My projects',
+        icon: <PieChartIcon />,
+      },
+      {
+        key: 'community',
+        text: 'Community',
+        icon: <GroupsIcon />,
+      },
     ],
   },
   links: {
@@ -84,54 +86,47 @@ const appComponents = {
 };
 
 const Header = () => {
-  const classes = useStyles();
-  const [state, setState] = useState(false);
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
 
-  const pathName = window.location.hash.substring(1);
-  const pathKey = pathToKey[`${pathName}`]
-    ? pathToKey[`${pathName}`]
-    : 'portfolio';
+  const pathKey = pathToKey[location.pathname] || 'portfolio';
 
-  const handleState = (newState) => () => {
-    setState(newState);
-  };
+  const toggleDrawer = (nextOpen) => () => setOpen(nextOpen);
 
   const list = () => (
-    <div
-      role="presentation"
-      onClick={handleState(false)}
-      onKeyDown={handleState(false)}
-    >
+    <div role="presentation">
       <List>
         {drawerKeys.map((key) => (
-          <AppLink
+          <RouterLink
             to={appComponents[key].path}
-            className={classes.link}
+            style={navLinkSx}
             key={key}
+            onClick={toggleDrawer(false)}
           >
-            <ListItem button>
-              <ListItemIcon>{appComponents[key].icon}</ListItemIcon>
-              <ListItemText primary={appComponents[key].text} />
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>{appComponents[key].icon}</ListItemIcon>
+                <ListItemText primary={appComponents[key].text} />
+              </ListItemButton>
             </ListItem>
-          </AppLink>
+          </RouterLink>
         ))}
       </List>
       <Divider />
       {appComponents[pathKey] && (
         <List>
           {appComponents[pathKey].items.map((drawerItem) => (
-            <Link
-              to={drawerItem.key}
-              onClick={handleState(false)}
-              smooth
-              className={classes.link}
-              key={drawerItem.key}
-            >
-              <ListItem button>
+            <ListItem disablePadding key={drawerItem.key}>
+              <ListItemButton
+                onClick={() => {
+                  toggleDrawer(false)();
+                  scrollToSection(drawerItem.key);
+                }}
+              >
                 <ListItemIcon>{drawerItem.icon}</ListItemIcon>
                 <ListItemText primary={drawerItem.text} />
-              </ListItem>
-            </Link>
+              </ListItemButton>
+            </ListItem>
           ))}
         </List>
       )}
@@ -139,31 +134,31 @@ const Header = () => {
   );
 
   return (
-    <AppBar position="fixed" className={classes.appBar}>
-      <Toolbar>
-        <Grid container alignItems="center">
-          <Grid item xs={3} sm={2} md={1}>
-            <Typography variant="h5" className={classes.title}>
+    <AppBar position="fixed" sx={appBarSx}>
+      <Toolbar sx={{ minHeight: '4em' }}>
+        <Grid container alignItems="center" sx={{ width: '100%' }}>
+          <Grid size={{ xs: 3, sm: 2, md: 1 }}>
+            <Typography variant="h5" sx={{ fontFamily: 'GOGOIA-Deco' }}>
               {appComponents[pathKey]
                 ? appComponents[pathKey].text
                 : 'Error 404'}
             </Typography>
           </Grid>
-          <Grid item xs={9} sm={10} md={11}>
+          <Grid size={{ xs: 9, sm: 10, md: 11 }}>
             <Grid container justifyContent="flex-end">
               <IconButton
-                className={classes.button}
+                sx={{ color: colors.ink, mx: 1 }}
                 aria-label="menu"
-                onClick={handleState(true)}
+                onClick={toggleDrawer(true)}
               >
-                <Menu />
+                <MenuIcon />
               </IconButton>
               <SwipeableDrawer
                 anchor="right"
-                onOpen={handleState(true)}
-                open={state}
-                onClose={handleState(false)}
-                classes={{ paper: classes.drawer }}
+                onOpen={toggleDrawer(true)}
+                open={open}
+                onClose={toggleDrawer(false)}
+                slotProps={{ paper: { sx: drawerSx } }}
               >
                 {list()}
               </SwipeableDrawer>
@@ -174,5 +169,7 @@ const Header = () => {
     </AppBar>
   );
 };
+
+Header.displayName = 'Header';
 
 export default Header;
