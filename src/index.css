@@ -7,6 +7,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset smooth-scroll targets so they clear the fixed header. */
+section[id] {
+  scroll-margin-top: 72px;
+}
+
+/* Honor a user's reduced-motion preference: jump instead of animating. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 @font-face {
   font-family: "GOGOIA-Regular";
   src: local("GOGOIA-Regular"),
