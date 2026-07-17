@@ -1,43 +1,32 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-
-import { Paper } from '@material-ui/core';
-
-import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Paper } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
 import Header from './components/header/Header';
 import Portfolio from './Portfolio';
 import Links from './Links';
 import Footer from './components/footer/Footer';
+import ScrollToTop from './ScrollToTop';
+import { colors } from './theme';
 
-const useStyles = makeStyles((theme) => ({
-  content: {},
-  paper: {
-    minHeight: '100vh',
-    //paddingTop: '64px',
-    [theme.breakpoints.down('xs')]: {
-      paddingTop: '56px',
-    },
-    backgroundColor: '#FBF7F0',
-  },
-}));
+const PagePaper = styled(Paper)({
+  minHeight: '100vh',
+  backgroundColor: colors.cream,
+});
 
-const App = () => {
-  const classes = useStyles();
-
-  return (
-    <HashRouter>
-      <Header classes={classes.header} />
-      <Paper className={classes.paper}>
-        <Switch>
-          <Route exact path="/links" component={Links} />
-          <Route exact path="/" component={Portfolio} />
-          <Route render={() => <Redirect to={{ pathname: '/' }} />} />
-        </Switch>
-      </Paper>
-      <Footer classes={classes.footer} />
-    </HashRouter>
-  );
-};
+const App = () => (
+  <BrowserRouter>
+    <ScrollToTop />
+    <Header />
+    <PagePaper elevation={0} square>
+      <Routes>
+        <Route path="/links" element={<Links />} />
+        <Route path="/" element={<Portfolio />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </PagePaper>
+    <Footer />
+  </BrowserRouter>
+);
 
 export default App;
