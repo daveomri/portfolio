@@ -47,11 +47,10 @@ const halo =
   '0 0 4px rgba(251, 247, 240, 0.95), 0 1px 16px rgba(251, 247, 240, 0.9)';
 
 const profilePicSx = {
-  minWidth: '200px',
-  width: '20vw',
+  // Smaller on phones/tablets; fluid 20vw on desktop as before.
+  width: { xs: '150px', sm: '190px', md: '20vw' },
   borderRadius: '100vw',
   height: 'auto',
-  border: '0px solid black',
   boxShadow: '0 0 0 6px rgba(251, 247, 240, 0.55)',
 };
 
@@ -124,7 +123,13 @@ const Greetings = ({ id }) => (
       container
       justifyContent="center"
       alignItems="center"
-      sx={{ minHeight: '100vh' }}
+      sx={{
+        minHeight: '100vh',
+        boxSizing: 'border-box',
+        // Clear the fixed header at the top and the scroll cue at the bottom.
+        pt: { xs: '72px', md: '96px' },
+        pb: { xs: '80px', md: '96px' },
+      }}
     >
       <Grid size={12}>
         <Grid container spacing={4} alignItems="center" justifyContent="center">
