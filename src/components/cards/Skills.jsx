@@ -34,6 +34,7 @@ const categories = [
       'Workato',
       'Power Automate',
       'Camunda',
+      'PipeDream'
     ],
   },
   {

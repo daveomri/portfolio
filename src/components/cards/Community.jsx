@@ -9,7 +9,7 @@ const Community = ({ id }) => (
         Community & events
       </Typography>
       <Typography sx={{ color: '#444', lineHeight: 1.7 }}>
-        Regular attendee of AI workshops and meetups — sometimes presenting,
+        Regular attendee of AI workshops and meetups; sometimes presenting,
         sometimes helping out behind the scenes.
       </Typography>
       <Typography sx={{ mt: 4, fontStyle: 'italic', color: '#333' }}>

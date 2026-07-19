@@ -2,6 +2,7 @@ import { Box, Typography, Link } from '@mui/material';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 import srlogo from '../../resource/images/SR.png';
+import sglogo from '../../resource/images/seage.png';
 import Tag from '../Tag';
 import { sectionSx, innerSx, headingSx, cardSx } from './sectionStyles';
 
@@ -10,21 +11,17 @@ const projects = [
     title: 'Seage framework',
     description:
       'Java-based hyper-heuristics engine for solving NP-hard combinatorial problems efficiently.',
-    tags: ['Java', 'Hyper-heuristics'],
+    tags: ['Java', 'Hyper-heuristics', 'HyFlex'],
+    url: 'https://github.com/seage',
+    logo: sglogo,
   },
   {
     title: 'Sudety Raport',
     description:
-      'Admin and lead frontend engineer — migrating the platform to Next.js for better scalability and performance.',
-    tags: ['Next.js', 'Frontend lead'],
+      'Admin and lead fullstack engineer; migrating the platform to Next.js for better scalability and performance.',
+    tags: ['Next.js', 'Fullstack lead'],
     logo: srlogo,
     url: 'https://sudetyraport.com',
-  },
-  {
-    title: 'Client integrations',
-    description:
-      'Built scalable connectors across multiple enterprise automation platforms.',
-    tags: ['C#', 'Ruby', 'Python', 'Java'],
   },
 ];
 
