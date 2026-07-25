@@ -3,14 +3,19 @@
   "name": "My little portfolio",
   "icons": [
     {
-      "src": "myicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "16x16 32x32 48x48 64x64 128x128 256x256"
     },
     {
-      "src": "logopf.png",
+      "src": "favicon_192x192.png",
       "type": "image/png",
-      "sizes": "83x92"
+      "sizes": "192x192"
+    },
+    {
+      "src": "favicon_512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": "/",

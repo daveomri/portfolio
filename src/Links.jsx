@@ -44,7 +44,12 @@ const linkSx = {
 };
 
 const sectionTitleSx = {
+  // Brand font, matching the header wordmark and the home-page section headings.
+  fontFamily: 'GOGOIA-Deco',
+  fontSize: 'clamp(1.35rem, 1rem + 1.8vw, 1.8rem)',
   textAlign: 'center',
+  mt: { xs: 1.5, md: 2 },
+  mb: 0.5,
   textShadow:
     '0 0 4px rgba(251, 247, 240, 0.95), 0 1px 16px rgba(251, 247, 240, 0.9)',
 };

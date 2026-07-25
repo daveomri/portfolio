@@ -33,11 +33,11 @@ const socialNetworks = [
     icon: <FacebookIcon fontSize="small" />,
     url: 'https://www.facebook.com/daom99/',
   },
-  {
-    name: 'instagram',
-    icon: <InstagramIcon fontSize="small" />,
-    url: 'https://www.instagram.com/daveomri/',
-  },
+  // {
+  //   name: 'instagram',
+  //   icon: <InstagramIcon fontSize="small" />,
+  //   url: 'https://www.instagram.com/daveomri/',
+  // },
 ];
 
 const Footer = () => (

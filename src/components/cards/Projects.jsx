@@ -10,7 +10,7 @@ const projects = [
   {
     title: 'Seage framework',
     description:
-      'Java-based hyper-heuristics engine for solving NP-hard combinatorial problems efficiently.',
+      'Helped extended the java-based hyper-heuristics engine for solving NP-hard combinatorial problems efficiently.',
     tags: ['Java', 'Hyper-heuristics', 'HyFlex'],
     url: 'https://github.com/seage',
     logo: sglogo,
@@ -18,8 +18,8 @@ const projects = [
   {
     title: 'Sudety Raport',
     description:
-      'Admin and lead fullstack engineer; migrating the platform to Next.js for better scalability and performance.',
-    tags: ['Next.js', 'Fullstack lead'],
+      'Admin and lead fullstack engineer.',
+    tags: ['Next.js', 'PHP', 'Fullstack dev'],
     logo: srlogo,
     url: 'https://sudetyraport.com',
   },

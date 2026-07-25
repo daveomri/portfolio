@@ -23,10 +23,13 @@ import scrollToSection from '../../scrollToSection';
 const CONTACT_EMAIL = 'david.omrai@davq.net';
 
 const roles = [
-  'Data scientist',
-  'Full-stack developer',
-  'Automation engineer',
-  'AI & knowledge engineering',
+  'Frontend developer',
+  'Backend developer',
+  'Automation engineering',
+  'AI/ML engineering',
+  'Knowledge engineering',
+  'Administration',
+  'Networking'
 ];
 
 const socials = [
@@ -35,12 +38,7 @@ const socials = [
     name: 'linkedin',
     icon: <LinkedInIcon />,
     url: 'https://www.linkedin.com/in/david-omrai-9797011b7/',
-  },
-  {
-    name: 'instagram',
-    icon: <InstagramIcon />,
-    url: 'https://www.instagram.com/daveomri/',
-  },
+  }
 ];
 
 const halo =
