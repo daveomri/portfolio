@@ -33,10 +33,7 @@ const linkSx = {
   borderRadius: '5em',
   color: colors.ink,
   border: `1px solid ${colors.ink}`,
-  // Frosted cream fill so the pills read cleanly over the hero photo
-  // (and blend into the page once it has faded to cream).
-  backgroundColor: 'rgba(251, 247, 240, 0.72)',
-  backdropFilter: 'blur(2px)',
+  backgroundColor: 'rgba(251, 247, 240, 0.85)',
   '&:hover': {
     backgroundColor: colors.sage,
     border: `1px solid ${colors.cream}`,

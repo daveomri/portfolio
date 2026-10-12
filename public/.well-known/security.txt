@@ -1,0 +1,5 @@
+# Security contact for David Omrai's portfolio (RFC 9116, https://securitytxt.org).
+# NOTE: the Expires date must stay in the future — renew it before it lapses.
+Contact: mailto:david.omrai@davq.net
+Expires: 2027-07-27T00:00:00.000Z
+Preferred-Languages: en, cs

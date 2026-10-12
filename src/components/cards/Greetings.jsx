@@ -9,7 +9,7 @@ import {
 import { Link as RouterLink } from 'react-router-dom';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
+// import InstagramIcon from '@mui/icons-material/Instagram';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
@@ -89,8 +89,7 @@ const ctaSx = {
   borderRadius: '5em',
   color: colors.ink,
   border: `1px solid ${colors.ink}`,
-  backgroundColor: 'rgba(251, 247, 240, 0.72)',
-  backdropFilter: 'blur(2px)',
+  backgroundColor: 'rgba(251, 247, 240, 0.85)',
   px: 2.5,
   textTransform: 'none',
   '&:hover': {

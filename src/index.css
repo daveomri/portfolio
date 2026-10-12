@@ -23,16 +23,13 @@ section[id] {
   }
 }
 
-@font-face {
-  font-family: "GOGOIA-Regular";
-  src: local("GOGOIA-Regular"),
-   url("./resource/fonts/Gogoia/Gogoia/Commercial/TTF/GOGOIA-Regular.ttf") format("truetype");
-}
-
+/* WOFF2 is a straight container conversion of the licensed TTF (FF EULA §04
+   allows web-font packages; glyphs are untouched). Preloaded in index.html. */
 @font-face {
   font-family: "GOGOIA-Deco";
   src: local("GOGOIA-Deco"),
-   url("./resource/fonts/Gogoia/Gogoia/Commercial/TTF/GOGOIA-Deco.ttf") format("truetype");
+   url("./resource/fonts/Gogoia/Gogoia/Commercial/WOFF2/GOGOIA-Deco.woff2") format("woff2");
+  font-display: swap;
 }
 
 code {

@@ -2,10 +2,10 @@ import { Grid, Typography, IconButton, Box } from '@mui/material';
 
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
+// import InstagramIcon from '@mui/icons-material/Instagram';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
-import logo from '../../resource/images/logo.gif';
+import logo from '../../resource/images/logo.webp';
 import { colors } from '../../theme';
 
 const rootSx = { px: 3, backgroundColor: colors.footerText };
@@ -50,6 +50,8 @@ const Footer = () => (
             component="img"
             src={logo}
             alt="Logo"
+            loading="lazy"
+            decoding="async"
             sx={{ width: '100px', height: 'auto', p: 1 }}
           />
         </Grid>

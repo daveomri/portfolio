@@ -14,5 +14,8 @@ export default defineConfig({
   build: {
     outDir: 'build',
     sourcemap: false,
+    // Keep small images as separate files: the logos sit below the fold and
+    // shouldn't be base64-inlined into the render-critical JS bundle.
+    assetsInlineLimit: 0,
   },
 });

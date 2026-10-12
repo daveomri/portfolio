@@ -1,8 +1,8 @@
 import { Box, Typography, Link } from '@mui/material';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
-import srlogo from '../../resource/images/SR.png';
-import sglogo from '../../resource/images/seage.png';
+import srlogo from '../../resource/images/SR.webp';
+import sglogo from '../../resource/images/seage.webp';
 import Tag from '../Tag';
 import { sectionSx, innerSx, headingSx, cardSx } from './sectionStyles';
 
@@ -54,6 +54,8 @@ const Projects = ({ id }) => (
                   component="img"
                   src={project.logo}
                   alt=""
+                  loading="lazy"
+                  decoding="async"
                   sx={{ width: 28, height: 28, borderRadius: '50%' }}
                 />
               )}
